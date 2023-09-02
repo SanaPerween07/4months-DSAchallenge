@@ -1,0 +1,17 @@
+class Solution {
+public:
+    string reverseOnlyLetters(string s) {
+        int n = s.length();
+        int start = 0, end = n - 1;
+        while (start < end) {
+            if (isalpha(s[start]) && isalpha(s[end])) {
+                swap(s[start++], s[end--]);
+            } else if (!isalpha(s[start])) {
+                start++;
+            } else if (!isalpha(s[end])) {
+                end--;
+            }
+        }
+        return s;
+    }
+};
