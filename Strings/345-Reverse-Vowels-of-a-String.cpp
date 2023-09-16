@@ -11,18 +11,14 @@ public:
         int end = s.size()-1;
         
         while(start<end){
-            // until start is pointing to consonent.
-            while(start<s.size() && !isvowel(s[start]) ){
+            if(isvowel(s[start]) && isvowel(s[end])){
+                swap(s[start++],s[end--]);
+            }
+            if(!isvowel(s[start])){
                 start++;
             }
-            
-            // until end is pointing to the consonent.
-            while( end>=0 && !isvowel(s[end]) ){
+            if(!isvowel(s[end])){
                 end--;
-            }
-            // if start<end swap. and increment the start while decrement the end.
-            if(start<end){
-                swap(s[start++],s[end--]);
             }
         }
         return s;
