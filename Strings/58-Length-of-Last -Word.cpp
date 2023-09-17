@@ -17,3 +17,8 @@ public:
         return cnt;
     }
 };
+
+
+// The purpose of this flag is to determine 
+// whether we have started counting the length of the last word or 
+// if we are still in the trailing spaces at the end of the string.

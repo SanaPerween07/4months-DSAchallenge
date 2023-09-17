@@ -4,11 +4,13 @@ public:
         int n = s.length();
         int start = 0, end = n - 1;
         while (start < end) {
-            if (isalpha(s[start]) && isalpha(s[end])) {
+            if (isalpha(s[start]) && isalpha(s[end])){
                 swap(s[start++], s[end--]);
-            } else if (!isalpha(s[start])) {
+            } 
+            else if (!isalpha(s[start])){
                 start++;
-            } else if (!isalpha(s[end])) {
+            }
+             else if (!isalpha(s[end])){
                 end--;
             }
         }
