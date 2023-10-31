@@ -1,21 +1,13 @@
 class Solution {
 public:
+
     double myPow(double x, int n) {
-        if (n == 0) {
-            return 1;
+        if(n==0) return 1;
+        if(n<0) {
+            n = abs(n);
+            x = 1/x;
         }
-
-        if (n < 0) {
-            x = 1 / x;
-            n = -n;
-        }
-        double half = myPow(x, n / 2);
-        double result = half * half;
-
-        if (n % 2 == 1) {
-            result *= x;
-        }
-
-        return result;
+        if(n%2==0) return myPow(x*x,n/2);
+        else return x*myPow(x,n-1);
     }
 };
